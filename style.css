@@ -1,0 +1,210 @@
+
+/* =========================
+   BOX MODEL DAN DASAR HALAMAN
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+}
+
+/* =========================
+   NAVBAR FLEXBOX
+========================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    padding: 18px 30px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: bold;
+    color: #4f46e5;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #64748b;
+}
+
+.menu a:hover {
+    color: #4f46e5;
+    border-bottom-color: #4f46e5
+    text-decoration: underline;
+}
+
+/* =========================
+   CONTENT DAN SIDEBAR
+========================= */
+
+.halaman {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px;
+}
+
+.konten {
+    flex: 1;
+    min-width: 0;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+.sidebar ul {
+    padding-left: 20px;
+}
+
+.sidebar li {
+    padding: 8px;
+    color: #0f172a;
+}
+
+.sidebar li:hover {
+    background-color: #eeeeff;
+    color: #4f46e5;
+}
+
+/* =========================
+   TABEL DATA
+========================= */
+
+.tabel-data {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.tabel-data caption {
+    font-weight: bold;
+    padding: 10px;
+    color: #64748b;
+}
+
+.tabel-data th,
+.tabel-data td {
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    text-align: left;
+}
+
+.tabel-data th {
+    background-color: #f1f5f9;
+    color: #0f172a;
+}
+
+.tabel-data tr:hover {
+    background-color: #eef2ff;
+}
+
+/* Mengatur lebar kolom */
+
+.tabel-data th:nth-child(1),
+.tabel-data td:nth-child(1) {
+    width: 25%;
+}
+
+.tabel-data th:nth-child(2),
+.tabel-data td:nth-child(2) {
+    width: 25%;
+}
+
+.tabel-data th:nth-child(3),
+.tabel-data td:nth-child(3) {
+    width: 20%;
+}
+
+.tabel-data th:nth-child(4),
+.tabel-data td:nth-child(4) {
+    width: 15%;
+}
+
+.tabel-data th:nth-child(5),
+.tabel-data td:nth-child(5) {
+    width: 15%;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    color: #64748b;
+}
+
+/* =========================
+   MEDIA QUERY 768 PX
+========================= */
+
+@media (max-width: 768px) {
+
+    /* Navbar menumpuk */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+    }
+
+    /* Sidebar turun ke bawah content */
+    .halaman {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .konten {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    /* Sembunyikan kolom Penulis */
+    .tabel-data th:nth-child(2),
+    .tabel-data td:nth-child(2) {
+        display: none;
+    }
+
+    /* Mengecilkan padding tabel */
+    .tabel-data th,
+    .tabel-data td {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
